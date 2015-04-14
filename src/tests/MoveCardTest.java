@@ -19,9 +19,11 @@ public class MoveCardTest {
 	
 	@Test
 	public void moveFromWasteToFoundationTest(){
+		
 		//No cards in waste
 		moveCardController=new MoveCardController(new Game(new Waste(21)));
 		Stack<Card> cardsWaste = new Stack<Card>();
+		moveCardController.getGame().setWaste(cardsWaste);
 		
 		//No cards in foundation & A in waste
 		

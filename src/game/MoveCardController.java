@@ -8,4 +8,12 @@ public class MoveCardController {
 		this.game=game;
 	}
 
+	public Game getGame() {
+		return this.game;
+	}
+
+	public void setGame(Game game) {
+		this.game = game;
+	}
+
 }
