@@ -1,14 +1,11 @@
 package tests;
 
-import static org.junit.Assert.*;
+import org.junit.runner.RunWith;
+import org.junit.runners.Suite;
+import org.junit.runners.Suite.SuiteClasses;
 
-import org.junit.Test;
-
+@RunWith(Suite.class)
+@SuiteClasses({StartGameTest.class, MoveCardTest.class})
 public class KlondikeTest {
-
-	@Test
-	public void test() {
-		fail("Not yet implemented");
-	}
 
 }
