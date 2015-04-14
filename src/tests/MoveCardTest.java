@@ -36,9 +36,9 @@ public class MoveCardTest {
 		cardsWaste.add(new Card(Score.AS, Suit.HEARTS, true));
 		moveCardController.getGame().setWaste(cardsWaste);
 		moveCardController.getGame().setFoundation(Suit.HEARTS, new Foundation(0, Suit.HEARTS));
-		assertFalse(this.moveCardController.moveFromWasteToFoundation(Suit.HEARTS));
+		assertTrue(this.moveCardController.moveFromWasteToFoundation(Suit.HEARTS));
 
-		//No cards in foundation & A in waste (exist Foundation suit)
+		//No cards in foundation & A in waste (no exist Foundation suit)
 		moveCardController=new MoveCardController(new Game(new Waste(21)));
 		cardsWaste = new Stack<Card>();
 		cardsWaste.add(new Card(Score.AS, Suit.CLUBS, true));
@@ -55,6 +55,21 @@ public class MoveCardTest {
 		assertFalse(this.moveCardController.moveFromWasteToFoundation(Suit.HEARTS));
 
 		//Waste card consecutive to Foundation card
+		moveCardController=new MoveCardController(new Game(new Waste(21)));
+		cardsWaste = new Stack<Card>();
+		cardsWaste.add(new Card(Score.FIVE, Suit.HEARTS, true));
+		moveCardController.getGame().setWaste(cardsWaste);
+		moveCardController.getGame().setFoundation(Suit.HEARTS, new Foundation(4, Suit.HEARTS));
+		assertTrue(this.moveCardController.moveFromWasteToFoundation(Suit.HEARTS));
+
+		//Waste card  no consecutive to Foundation card
+		moveCardController=new MoveCardController(new Game(new Waste(21)));
+		cardsWaste = new Stack<Card>();
+		cardsWaste.add(new Card(Score.DAME, Suit.HEARTS, true));
+		moveCardController.getGame().setWaste(cardsWaste);
+		moveCardController.getGame().setFoundation(Suit.HEARTS, new Foundation(4, Suit.HEARTS));
+		assertFalse(this.moveCardController.moveFromWasteToFoundation(Suit.HEARTS));
+
 
 		//Waste card no consecutive to Foundation card
 
