@@ -38,6 +38,14 @@ public class MoveCardTest {
 		moveCardController.getGame().setFoundation(Suit.HEARTS, new Foundation(0, Suit.HEARTS));
 		assertFalse(this.moveCardController.moveFromWasteToFoundation(Suit.HEARTS));
 
+		//No cards in foundation & A in waste (exist Foundation suit)
+		moveCardController=new MoveCardController(new Game(new Waste(21)));
+		cardsWaste = new Stack<Card>();
+		cardsWaste.add(new Card(Score.AS, Suit.CLUBS, true));
+		moveCardController.getGame().setWaste(cardsWaste);
+		moveCardController.getGame().setFoundation(Suit.HEARTS, new Foundation(0, Suit.HEARTS));
+		assertFalse(this.moveCardController.moveFromWasteToFoundation(Suit.HEARTS));
+
 		//No cards in foundation & no A in waste
 
 		//Waste card consecutive to Foundation card
