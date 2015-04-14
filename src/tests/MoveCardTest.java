@@ -70,7 +70,6 @@ public class MoveCardTest {
 		moveCardController.getGame().setFoundation(Suit.HEARTS, new Foundation(4, Suit.HEARTS));
 		assertFalse(this.moveCardController.moveFromWasteToFoundation(Suit.HEARTS));
 
-
 		//Waste card no consecutive to Foundation card
 
 		//Waste card consecutive to Foundation card but different type
