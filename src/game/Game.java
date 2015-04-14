@@ -6,10 +6,12 @@ import java.util.Stack;
 public class Game {
 	
 	private Waste waste;
+	private Deck deck;
 	private ArrayList<Foundation> foundations;
 
-	public Game(Waste waste) {
+	public Game(Deck deck, Waste waste) {
 		this.waste=waste;
+		this.deck=deck;
 	}
 
 	public Waste getWaste() {
