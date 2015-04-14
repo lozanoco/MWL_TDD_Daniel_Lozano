@@ -47,6 +47,12 @@ public class MoveCardTest {
 		assertFalse(this.moveCardController.moveFromWasteToFoundation(Suit.HEARTS));
 
 		//No cards in foundation & no A in waste
+		moveCardController=new MoveCardController(new Game(new Waste(21)));
+		cardsWaste = new Stack<Card>();
+		cardsWaste.add(new Card(Score.FIVE, Suit.HEARTS, true));
+		moveCardController.getGame().setWaste(cardsWaste);
+		moveCardController.getGame().setFoundation(Suit.HEARTS, new Foundation(0, Suit.HEARTS));
+		assertFalse(this.moveCardController.moveFromWasteToFoundation(Suit.HEARTS));
 
 		//Waste card consecutive to Foundation card
 
