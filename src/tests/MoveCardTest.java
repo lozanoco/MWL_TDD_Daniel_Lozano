@@ -27,6 +27,7 @@ public class MoveCardTest {
 		Stack<Card> cardsWaste = new Stack<Card>();
 		moveCardController.getGame().setWaste(cardsWaste);
 		this.moveCardController.getGame().setFoundation(Suit.DIAMONDS, new Foundation(4, Suit.DIAMONDS));
+		assertFalse(this.moveCardController.moveFromWasteToFoundation(Suit.DIAMONDS));
 		
 		//No cards in foundation & A in waste
 		

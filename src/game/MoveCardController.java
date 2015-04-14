@@ -16,4 +16,9 @@ public class MoveCardController {
 		this.game = game;
 	}
 
+	public boolean moveFromWasteToFoundation(Suit suit) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
 }
