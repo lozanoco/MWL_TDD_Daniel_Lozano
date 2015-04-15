@@ -109,10 +109,40 @@ public class MoveCardTest {
 		}
 		
 		//One card in Deck, rest in Waste
+		moveCardController = new MoveCardController(new Game(new Deck(1), new Waste(23)));
+		moveCardController.moveFromDeckToWaste();
+		assertEquals(0, this.moveCardController.getGame().getDeck().size());
+		assertEquals(24, this.moveCardController.getGame().getWaste().size());
+		for (Card card : this.moveCardController.getGame().getDeck().getCards()) {
+			assertTrue(card.covered());
+		}
+		for (Card card : this.moveCardController.getGame().getWaste().getCards()) {
+			assertFalse(card.covered());
+		}
 		
 		//Two cards in Deck, rest in Waste
+		moveCardController = new MoveCardController(new Game(new Deck(2), new Waste(22)));
+		moveCardController.moveFromDeckToWaste();
+		assertEquals(0, this.moveCardController.getGame().getDeck().size());
+		assertEquals(24, this.moveCardController.getGame().getWaste().size());
+		for (Card card : this.moveCardController.getGame().getDeck().getCards()) {
+			assertTrue(card.covered());
+		}
+		for (Card card : this.moveCardController.getGame().getWaste().getCards()) {
+			assertFalse(card.covered());
+		}
 		
 		//Three cards in Deck, rest in Waste
+		moveCardController = new MoveCardController(new Game(new Deck(3), new Waste(21)));
+		moveCardController.moveFromDeckToWaste();
+		assertEquals(0, this.moveCardController.getGame().getDeck().size());
+		assertEquals(24, this.moveCardController.getGame().getWaste().size());
+		for (Card card : this.moveCardController.getGame().getDeck().getCards()) {
+			assertTrue(card.covered());
+		}
+		for (Card card : this.moveCardController.getGame().getWaste().getCards()) {
+			assertFalse(card.covered());
+		}
 		
 		//More than Three cards in Deck, rest in Waste
 		
