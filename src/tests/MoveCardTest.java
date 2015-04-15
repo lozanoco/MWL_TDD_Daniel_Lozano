@@ -144,8 +144,17 @@ public class MoveCardTest {
 			assertFalse(card.covered());
 		}
 		
-		//More than Three cards in Deck, rest in Waste
-		
+		//More than Three cards in Deck, rest in Waste		
+		moveCardController = new MoveCardController(new Game(new Deck(4), new Waste(20)));
+		moveCardController.moveFromDeckToWaste();
+		assertEquals(1, this.moveCardController.getGame().getDeck().size());
+		assertEquals(23, this.moveCardController.getGame().getWaste().size());
+		for (Card card : this.moveCardController.getGame().getDeck().getCards()) {
+			assertTrue(card.covered());
+		}
+		for (Card card : this.moveCardController.getGame().getWaste().getCards()) {
+			assertFalse(card.covered());
+		}
 	}
 
 }
