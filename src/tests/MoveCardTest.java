@@ -84,7 +84,17 @@ public class MoveCardTest {
 	@Test
 	public void moveFromDeckToWasteTest(){
 		this.moveCardController = new MoveCardController(new Game(new Deck(24), new Waste(0)));
+		//All cards in Waste, no cards in Deck
 		
+		//All cards in Deck, no cards in Waste
+		
+		//One card in Deck, rest in Waste
+		
+		//Two cards in Deck, rest in Waste
+		
+		//Three cards in Deck, rest in Waste
+		
+		//More than Three cards in Deck, rest in Waste
 		
 	}
 
