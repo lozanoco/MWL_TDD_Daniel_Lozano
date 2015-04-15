@@ -83,8 +83,18 @@ public class MoveCardTest {
 	
 	@Test
 	public void moveFromDeckToWasteTest(){
-		this.moveCardController = new MoveCardController(new Game(new Deck(24), new Waste(0)));
+		
 		//All cards in Waste, no cards in Deck
+		moveCardController = new MoveCardController(new Game(new Deck(0), new Waste(24)));
+		moveCardController.moveFromDeckToWaste();
+		assertEquals(21, this.moveCardController.getGame().getDeck().size());
+		assertEquals(3, this.moveCardController.getGame().getWaste().size());
+		for (Card card : this.moveCardController.getGame().getDeck().getCards()) {
+			assertTrue(card.covered());
+		}
+		for (Card card : this.moveCardController.getGame().getWaste().getCards()) {
+			assertFalse(card.covered());
+		}
 		
 		//All cards in Deck, no cards in Waste
 		

@@ -21,4 +21,9 @@ public class MoveCardController {
 		return false;
 	}
 
+	public void moveFromDeckToWaste() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

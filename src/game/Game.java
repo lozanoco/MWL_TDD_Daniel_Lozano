@@ -11,7 +11,7 @@ public class Game {
 
 	public Game(Deck deck, Waste waste) {
 		this.waste=waste;
-		this.deck=deck;
+		this.setDeck(deck);
 	}
 
 	public Waste getWaste() {
@@ -44,6 +44,14 @@ public class Game {
 			assert false;
 		}
 		
+	}
+
+	public Deck getDeck() {
+		return deck;
+	}
+
+	public void setDeck(Deck deck) {
+		this.deck = deck;
 	}
 
 }

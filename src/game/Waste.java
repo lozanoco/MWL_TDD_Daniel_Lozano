@@ -20,5 +20,11 @@ public class Waste {
 		}
 		return cards;
 	}
+	public int size() {
+		return this.cards.size();
+	}
+	public Stack<Card> getCards() {
+		return this.cards;
+	}
 
 }
