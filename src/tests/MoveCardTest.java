@@ -156,5 +156,22 @@ public class MoveCardTest {
 			assertFalse(card.covered());
 		}
 	}
+	
+	@Test
+	public void moveFromWasteToTableauTest(){
+		
+		//No cards in Waste
+		
+		//No cards in Tableau, score ROI card in Waste
+		
+		//No cards in Tableau, score card different to ROI in Waste
+		
+		//One score lower card in Waste that tableau (same color)		
+
+		//One score lower card in Waste that tableau (different color)
+		
+		
+		
+	}
 
 }
