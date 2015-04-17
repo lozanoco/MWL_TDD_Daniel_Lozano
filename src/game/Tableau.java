@@ -18,5 +18,10 @@ public class Tableau {
 		this.cards = cards;
 	}
 
+	public void addCard(Score four, Suit diamonds, boolean b) {
+		// TODO Auto-generated method stub
+		
+	}
+
 
 }

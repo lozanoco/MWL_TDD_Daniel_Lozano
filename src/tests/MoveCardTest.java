@@ -186,10 +186,27 @@ public class MoveCardTest {
 		this.moveCardController.getGame().setTableau(nTableau,new Tableau());
 		assertTrue(this.moveCardController.moveFromWasteToFoundationTableau(0));
 		
-		//One score lower card in Waste that tableau (same color)		
+		//One score lower card in Waste that tableau (same color)	
+		cardsWaste = new Stack<Card>();
+		card = new Card(Score.FOUR, Suit.DIAMONDS, false);
+		cardsWaste.add(card);
+		this.moveCardController = new MoveCardController(new Game(new Deck(3), new Waste(cardsWaste)));
+		nTableau=0;
+		Tableau tableau = new Tableau();
+		tableau.addCard(Score.FIVE, Suit.DIAMONDS, false);
+		this.moveCardController.getGame().setTableau(nTableau,tableau);
+		assertFalse(this.moveCardController.moveFromWasteToFoundationTableau(0));
 
-		//One score lower card in Waste that tableau (different color)		
-		
+		//One score lower card in Waste that tableau (different color)
+		cardsWaste = new Stack<Card>();
+		card = new Card(Score.FOUR, Suit.SPADES, false);
+		cardsWaste.add(card);
+		this.moveCardController = new MoveCardController(new Game(new Deck(3), new Waste(cardsWaste)));
+		nTableau=0;
+		tableau = new Tableau();
+		tableau.addCard(Score.FIVE, Suit.DIAMONDS, false);
+		this.moveCardController.getGame().setTableau(nTableau,tableau);
+		assertTrue(this.moveCardController.moveFromWasteToFoundationTableau(0));
 		
 	}
 
