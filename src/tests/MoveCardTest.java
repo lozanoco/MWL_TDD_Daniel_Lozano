@@ -26,7 +26,7 @@ public class MoveCardTest {
 	public void moveFromWasteToFoundationTest(){
 
 		//No cards in waste
-		moveCardController=new MoveCardController(new Game(new Deck(0), new Waste(21)));
+		moveCardController=new MoveCardController(new Game(new Deck(2), new Waste(0)));
 		Stack<Card> cardsWaste = new Stack<Card>();
 		moveCardController.getGame().setWaste(cardsWaste);
 		this.moveCardController.getGame().setFoundation(Suit.DIAMONDS, new Foundation(4, Suit.DIAMONDS));
@@ -162,7 +162,7 @@ public class MoveCardTest {
 	public void moveFromWasteToTableauTest(){
 		
 		//No cards in Waste
-		moveCardController=new MoveCardController(new Game(new Deck(0), new Waste(21)));
+		moveCardController=new MoveCardController(new Game(new Deck(2), new Waste(0)));
 		Stack<Card> cardsWaste = new Stack<Card>();
 		moveCardController.getGame().setWaste(cardsWaste);
 		this.moveCardController.getGame().setFoundation(Suit.DIAMONDS, new Foundation(4, Suit.DIAMONDS));
@@ -175,7 +175,7 @@ public class MoveCardTest {
 		this.moveCardController = new MoveCardController(new Game(new Deck(3), new Waste(cardsWaste)));
 		int nTableau=0;
 		this.moveCardController.getGame().setTableau(nTableau,new Tableau());
-		assertTrue(this.moveCardController.moveFromWasteToFoundationTableau(0));
+		assertFalse(this.moveCardController.moveFromWasteToFoundationTableau(0));
 		
 		//No cards in Tableau,  card ROI in Waste
 		cardsWaste = new Stack<Card>();
