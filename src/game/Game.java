@@ -8,6 +8,7 @@ public class Game {
 	private Waste waste;
 	private Deck deck;
 	private ArrayList<Foundation> foundations;
+	private ArrayList<Tableau> tableaus;
 
 	public Game(Deck deck, Waste waste) {
 		this.waste=waste;
@@ -52,6 +53,11 @@ public class Game {
 
 	public void setDeck(Deck deck) {
 		this.deck = deck;
+	}
+
+	public void setTableau(int nTableau, Tableau tableau) {
+		this.tableaus.set(nTableau, tableau);
+		
 	}
 
 }

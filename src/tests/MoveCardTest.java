@@ -10,6 +10,7 @@ import game.Game;
 import game.MoveCardController;
 import game.Score;
 import game.Suit;
+import game.Tableau;
 import game.Waste;
 
 import java.util.Stack;
@@ -161,15 +162,27 @@ public class MoveCardTest {
 	public void moveFromWasteToTableauTest(){
 		
 		//No cards in Waste
-		
+		moveCardController=new MoveCardController(new Game(new Deck(0), new Waste(21)));
+		Stack<Card> cardsWaste = new Stack<Card>();
+		moveCardController.getGame().setWaste(cardsWaste);
+		this.moveCardController.getGame().setFoundation(Suit.DIAMONDS, new Foundation(4, Suit.DIAMONDS));
+		assertFalse(this.moveCardController.moveFromWasteToFoundation(Suit.DIAMONDS));
+
 		//No cards in Tableau, score ROI card in Waste
+		cardsWaste = new Stack<Card>();
+		Card card = new Card(Score.FOUR, Suit.DIAMONDS, false);
+		cardsWaste.add(card);
+		card = new Card(Score.FOUR, Suit.DIAMONDS, false);
+		this.moveCardController = new MoveCardController(new Game(new Deck(3), new Waste(cardsWaste)));
+		int nTableau=0;
+		this.moveCardController.getGame().setTableau(nTableau,new Tableau());
+		assertTrue(this.moveCardController.moveFromWasteToFoundationTableau(0));
 		
 		//No cards in Tableau, score card different to ROI in Waste
 		
 		//One score lower card in Waste that tableau (same color)		
 
-		//One score lower card in Waste that tableau (different color)
-		
+		//One score lower card in Waste that tableau (different color)		
 		
 		
 	}
